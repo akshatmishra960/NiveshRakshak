@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NiveshRakshak — Financial Safety Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><div class="shield">✓</div><div><b>NiveshRakshak</b><small>Check before you trust.</small></div></div>
+  <nav><a href="#home">Home</a><a href="#history">History</a><a href="#tips">Safety Tips</a><button id="langBtn">हिन्दी</button></nav>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div>
+    <span class="tag">AI-POWERED FINANCIAL SAFETY</span>
+    <h1 id="title">Check before <span>you trust.</span></h1>
+    <p id="subtitle">Analyze suspicious financial messages and identify common risk indicators before you act.</p>
+    <div class="badges"><span>🔒 Privacy-aware</span><span>🇮🇳 Bharat-first</span><span>🛡 No investment advice</span></div>
+  </div>
+  <div class="heroCard"><div class="bigShield">🛡️</div><b>Pause • Understand • Verify</b><small>Financial safety assistant</small></div>
+</section>
+
+<section class="scanner">
+  <div id="apiStatus" class="apiStatus">Checking backend…</div>
+  <div class="tabs">
+    <button class="tab active" data-tab="text">💬 Message</button>
+    <button class="tab" data-tab="image">🖼️ Screenshot</button>
+  </div>
+
+  <div id="textPanel" class="tabPanel">
+    <label>Paste a suspicious financial message</label>
+    <textarea id="message" placeholder="Example: Guaranteed 40% profit in 7 days. Invest today..."></textarea><div class="charCount"><span id="charCount">0</span> characters</div>
+    <button id="analyzeBtn" class="primary">Analyze Now →</button>
+  </div>
+
+  <div id="imagePanel" class="tabPanel hidden">
+    <label>Upload a screenshot</label>
+    <input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp,image/jpg">
+    <div id="preview" class="preview">Your screenshot preview will appear here.</div>
+    <button id="imageAnalyzeBtn" class="primary">Extract Text & Analyze →</button>
+    <small class="note">Actual browser OCR: the screenshot is processed locally with Tesseract.js (English + Hindi). Clear, high-resolution screenshots work best.</small>
+  </div>
+</section>
+
+<section id="result" class="result hidden">
+  <div class="resultHead">
+    <div><small>ANALYSIS RESULT</small><h2 id="riskTitle"></h2></div>
+    <div class="score" id="score"></div>
+  </div>
+  <div class="meter"><div id="meterFill"></div></div>
+  <h3>Detected Red Flags</h3>
+  <div id="signals"></div>
+  <h3>What You Should Do</h3>
+  <ul id="actions"></ul>
+  <div class="verifyBox">
+    <b>Independent verification</b>
+    <p id="verifyText">Before acting, verify the sender, claim and registration details through trusted official sources.</p>
+    <div class="verifyLinks">
+      <a href="https://www.sebi.gov.in/" target="_blank" rel="noopener">SEBI official website ↗</a>
+      <a href="https://investor.sebi.gov.in/" target="_blank" rel="noopener">SEBI Investor ↗</a>
+    </div>
+  </div>
+  <p class="disclaimer">Hackathon prototype.  This tool identifies risk indicators; it does not prove that an investment is fraudulent or legitimate and does not provide financial advice.</p>
+  <button class="secondary" onclick="document.getElementById('result').classList.add('hidden')">← Scan Another Message</button>
+</section>
+
+
+
+
+<section class="demo panel">
+  <div class="historyHead">
+    <div><h2>Quick Demo</h2><p>Use a sample message to demonstrate the prototype.</p></div>
+  </div>
+  <div class="demoGrid">
+    <button class="demoCard" data-demo="high"><b>🔴 Suspicious investment</b><small>Guaranteed 40% profit + urgency + payment pressure</small></button>
+    <button class="demoCard" data-demo="medium"><b>🟡 Unverified opportunity</b><small>Exclusive opportunity + unusually strong claim</small></button>
+    <button class="demoCard" data-demo="low"><b>🟢 Normal-looking message</b><small>General educational investment information</small></button>
+  </div>
+</section>
+
+<section class="explain panel">
+  <h2>How the risk score works</h2>
+  <div class="scoreGrid">
+    <div><strong>0–24</strong><span>Low risk indicators</span></div>
+    <div><strong>25–49</strong><span>Needs verification</span></div>
+    <div><strong>50–100</strong><span>High risk indicators</span></div>
+  </div>
+  <p>Scores are generated from configurable prototype rules. They are not a guarantee that content is legitimate or fraudulent.</p>
+</section>
+<section id="history" class="history panel">
+  <div class="historyHead"><div><h2>Recent scans</h2><p>Stored in the project database by anonymous session ID; screenshots are never uploaded.</p></div><button id="clearHistory" class="clearBtn">Clear</button></div>
+  <div id="historyList"><div class="emptyHistory">No scans yet.</div></div>
+</section>
+<section id="tips" class="tips">
+<h2>Safety checklist</h2>
+<div class="tipGrid">
+  <div><b>01 — Pause</b><p>Do not act just because a message creates urgency.</p></div>
+  <div><b>02 — Verify</b><p>Check the sender and financial claim using trusted official sources.</p></div>
+  <div><b>03 — Protect</b><p>Never share OTP, password, PIN, CVV or sensitive credentials.</p></div>
+</div>
+</section>
+</main>
+<footer>NiveshRakshak • Hackathon MVP • Educational safety tool</footer>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

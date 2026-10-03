@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: niveshrakshak
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - nivesh_pg:/var/lib/postgresql/data
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/niveshrakshak
+      PORT: 3000
+      STORE_FULL_TEXT: "false"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+volumes:
+  nivesh_pg:

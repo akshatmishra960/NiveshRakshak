@@ -1,0 +1,15 @@
+NIVESHRAKSHAK — 90 SECOND DEMO
+
+1. Open the dashboard.
+2. Say: “A user receives a financial message promising unusually high returns.”
+3. Click Quick Demo → Suspicious investment.
+4. Click Analyze Now.
+5. Show the score and explain the indicators: guaranteed return, urgency and payment pressure.
+6. Switch to Screenshot.
+7. Upload the supplied WhatsApp-style screenshot.
+8. Click Extract Text & Analyze.
+9. Point to OCR Extracted Text.
+10. Point to the same risk analysis generated from OCR output.
+11. Open Recent Scans and explain that the backend database stores anonymous scan metadata.
+12. Mention the privacy design: screenshots are processed locally in the browser and are not uploaded.
+13. End with: “NiveshRakshak does not tell people what to invest in. It helps them pause, understand and verify before acting.”
